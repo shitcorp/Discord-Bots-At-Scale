@@ -24,7 +24,7 @@ In general, reducing needless caching is a good thing. It will decrease the memo
 
 ## Standard Lib
 
-The standard Discord.js lib is fairly performant out of the box, though not production-ready. (See notice below for info on production readiness.) Though there are some ways to increase your bot's performance with almost no impact.
+The standard [Discord.js](https://discord.js.org/) lib is fairly performant out of the box, though not production-ready. (See notice below for info on production readiness.) Though there are some ways to increase your bot's performance with no trade-offs.
 
 To start, lets talking about message caching. In the [client options](https://discordjs.guide/popular-topics/intents.html#privileged-intents) there are quite a few helpful choices in reducing this.
 
@@ -40,10 +40,18 @@ The `messageSweepInterval` determines how frequently eligible messages are swept
 
 ## Using Discord.js-light
 
-Using Discord.js-light is almost exactly like using Discord.js normally. In fact, Discord.js-light is just a modified of Discord.js. What makes Discord.js-light so powerful then is its focus on reducing caching. As briefly touched on [directly above](#Standard-Lib) and in [Reducing Caching](#Reducing-Caching), its simply stated that caching can have a performance penalty on your application.
+Using [Discord.js-light](https://github.com/timotejroiko/discord.js-light) is almost exactly like using Discord.js normally. In fact, Discord.js-light is just a modified of Discord.js. What makes Discord.js-light so powerful then is its focus on reducing caching. As briefly touched on [directly above](#Standard-Lib) and in [Reducing Caching](#Reducing-Caching), its simply stated that caching can have a performance penalty on your application.
 
 ![Graph detailing the impact of caching](https://raw.githubusercontent.com/timotejroiko/discord.js-light/HEAD/bench.png)
 
 "By disabling all major caches we were able to reduce memory usage from ~500mb to less than 20mb." ([Discord.js-light](https://github.com/timotejroiko/discord.js-light#the-impact-of-caching)) This is a massive drop, reducing the caching of an application can significantly decrease its memory usage, allowing for your bot to handle more guilds.
 
 While reducing caching is nice, Discord.js-light does have some drawbacks like all things. To start, working with the new caching system might be confusing to some less experienced developers. The learning curve shouldn't be too hard, you just need to be willing to read the documentation. Another draw back is converting an existing bot to Discord.js-light. Due to the reworked caching api, it will likely take some extensive probing and testing of your bot to weed out any caching related hiccups.
+
+## Kurasuta
+
+[Kurasuta](https://github.com/DevYukine/Kurasuta) is probably the best way to get free performance from your Discord.js bot. Unlike Discord.js-light, which replaces the Discord.js library, Kurasuta is a replacement sharding manager. What makes it so powerful compared to Discord.js's built-in manager is its ability to cluster shards. Kurasuta can distribute the load of shards across CPU cores instead of relying upon one.
+
+The one trade-off when using Kurasuta is that the main bot file must be formatted in a specific way. For example, in the main bot file, the bot must utilize and expose a Class specified by Kurasuta. This shouldn't be a huge issue and might require some refactoring in existing bots, but it is largely worth it. Another downside is the refactored API. Due to how messages are passed between clusters, and consequently shards, the shard API had to be changed. Hence, you are at the mercy of the customized shard API listed [here](https://github.com/DevYukine/Kurasuta#shardclientutil).
+
+A huge plus for Kurasuta is the ability to specify a custom Discord.js client, such as Discord.js-light. The types for this feature aren't great, and you might have to typecast if you are using TS, but as stated above in the [piece on](#Using-Discord.js-light) Discord.js-light, the gains are worth it.

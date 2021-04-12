@@ -2,8 +2,6 @@ Todo:
 
 - JS
 
-  - Discord.js
-    - Kurasuta
   - Eris
     - Eris-fleet
     - Redis-sharder
