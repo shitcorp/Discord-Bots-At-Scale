@@ -6,6 +6,8 @@ Writing a discord bot designed to scale is a difficult task. A wide variety of l
 
 # All clients
 
+The following subsections are a series of improvements that you should be complete with some respect for every client. What it looks like in terms of performance can vary drastically and depends entirely on the client. When comparing performance between all the differnt libraries and stacks, the language of each should be kept in mind. For example, comparing a pure Node.js client to a fullstack rust bot isn't fair. As such comparisons of performance gains in such scenarios should be taken with a grain of salt.
+
 ## Intents
 
 The simplest way to increase your bot’s performance is to start using Gateway Intents. Intents allow you to select which events Discord will push to your bot. This means that your bot won’t have to spend time processing unused events. Freeing it to perform whatever it’s supposed to. A great price written on this topic is on [Discord.js’s guide](https://discordjs.guide/popular-topics/intents.html#privileged-intents) While it does specifically talk about Gateway Intents in relationship to Discord.js, you can still learn a great deal about them.
@@ -22,6 +24,8 @@ In general, reducing needless caching is a good thing. It will decrease the memo
 
 # Discord.js
 
+> **⚠ Notice ⚠:** For any production app, you must in all circumstances utilize both the `messageCacheLifetime` and `messageSweepInterval` options. Without chnaging these settings a memory leak is guaranteed to occour! Change these settings from default immediately!
+
 ## Standard Lib
 
 The standard [Discord.js](https://discord.js.org/) lib is fairly performant out of the box, though not production-ready. (See notice below for info on production readiness.) Though there are some ways to increase your bot's performance with no trade-offs.
@@ -31,8 +35,6 @@ To start, lets talking about message caching. In the [client options](https://di
 To start, let’s talk about the `messageEditHistoryMaxSize` option. By default, it is set to `-1`, or in other terms, unlimited. What this means is that Discord.js saves every version of a message, and only clears them when the cache sweep clears them. So obviously, unless you use previous versions of messages, this is pretty pointless. In this case, I would personally recommend setting it to `0` so that Discord.js doesn’t ever save previous versions. If you do utilize edited messages, setting it to `1`, or `2` should be plenty.
 
 Next up is `messageCacheMaxSize`. It’s pretty simple, it’s just the number of messages to cache per channel. In general, I recommend `25` compared to the default `200` to decrease the memory footprint. <<<need to look into whether bulk delete method is affected by the message cache>>>
-
-> **Notice:** For any production app, you should in all circumstances utilize both the `messageCacheLifetime` and `messageSweepInterval.`
 
 Up now is `messageCacheLifetime`. It determines how many seconds until a message can be swept. By default, it is set to `0`, or Unlimited. I recommend using `21600`s or 6 hours.
 
@@ -55,3 +57,43 @@ While reducing caching is nice, Discord.js-light does have some drawbacks like a
 The one trade-off when using Kurasuta is that the main bot file must be formatted in a specific way. For example, in the main bot file, the bot must utilize and expose a Class specified by Kurasuta. This shouldn't be a huge issue and might require some refactoring in existing bots, but it is largely worth it. Another downside is the refactored API. Due to how messages are passed between clusters, and consequently shards, the shard API had to be changed. Hence, you are at the mercy of the customized shard API listed [here](https://github.com/DevYukine/Kurasuta#shardclientutil).
 
 A huge plus for Kurasuta is the ability to specify a custom Discord.js client, such as Discord.js-light. The types for this feature aren't great, and you might have to typecast if you are using TS, but as stated above in the [piece on](#Using-Discord.js-light) Discord.js-light, the gains are worth it.
+
+# Eris
+
+## Standard Lib
+
+[Eris](https://abal.moe/Eris/).
+
+## Eris-fleet
+
+[Eris-fleet](https://github.com/danclay/eris-fleet/).
+
+## Redis-sharder
+
+> **⚠ Notice ⚠:** Redis Sharder is no longer maintained.
+
+[Redis Sharder](https://github.com/arcanebot/redis-sharder).
+
+## Eris-sharder
+
+[Eris-sharder](https://github.com/discordware/eris-sharder) is bassicly Eris-fleet. Not sure why you might want to use it besides it being an alterative to Eris-fleet.
+
+## Megane
+
+[Megane](https://github.com/brussell98/megane) is in the same situation as Eris-sharder. Not sure why you might want to use it besides it being an alterative to Eris-fleet.
+
+# WeatherStack
+
+> **⚠ Notice ⚠:** The entirty of the WeatherStack appears to have been abandoned.
+
+Due to it be sprawling not well documented, a list of its components can be found [here](https://gist.github.com/Huskydog9988/4323a9fe8d6a8997404df52c91b964c6).
+
+# Twilight
+
+[Twilight](https://twilight.rs/).
+
+# Serenity
+
+[Serenity](https://crates.io/crates/serenity)
+
+# Spectacles
