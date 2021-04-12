@@ -3,7 +3,6 @@ Todo:
 - JS
 
   - Discord.js
-    - Discord.js-light
     - Kurasuta
   - Eris
     - Eris-fleet
