@@ -64,6 +64,7 @@ The `messageSweepInterval` determines how frequently eligible messages are swept
 Using [Discord.js-light](https://github.com/timotejroiko/discord.js-light) is almost exactly like using Discord.js normally. In fact, Discord.js-light is just a modified of Discord.js. What makes Discord.js-light so powerful then is its focus on reducing caching. As briefly touched on [directly above](#Standard-Lib) and in [Reducing Caching](#Reducing-Caching), its simply stated that caching can have a performance penalty on your application.
 
 ![Graph detailing the impact of caching](https://raw.githubusercontent.com/timotejroiko/discord.js-light/HEAD/bench.png)
+(Credit to Timotej Rojko, the maker of Discord.js-light for this graph.)
 
 "By disabling all major caches we were able to reduce memory usage from ~500mb to less than 20mb." ([Discord.js-light](https://github.com/timotejroiko/discord.js-light#the-impact-of-caching)) This is a massive drop, reducing the caching of an application can significantly decrease its memory usage, allowing for your bot to handle more guilds.
 
