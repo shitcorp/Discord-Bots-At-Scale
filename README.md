@@ -4,24 +4,24 @@ Writing a discord bot designed to scale is a difficult task. A wide variety of l
 
 # Table of Contents
 
-- [All Clients]()
-  - [Intents]()
-  - [Sharding]()
-  - [Reducing Caching]()
-- [Discord.js]()
-  - [Standard Lib]()
-  - [Using Discord.js-light]()
-  - [Kurasuta]()
-- [Eris]()
-  - [Standard Lib]()
-  - [Eris-fleet]()
-  - [Redis-sharder]()
-  - [Eris-sharder]()
-  - [Megane]()
-- [WeatherStack]()
-- [Twilight]()
-- [Serenity]()
-- [Spectacles]()
+- [All Clients](#All-clients)
+  - [Intents](#Intents)
+  - [Sharding](#Sharding)
+  - [Reducing Caching](#Reducing-Caching)
+- [Discord.js](#Discord.js)
+  - [Standard Lib](#Standard-Lib-Discord.js)
+  - [Using Discord.js-light](#Using-Discord.js-light)
+  - [Kurasuta](#Kurasuta)
+- [Eris](#Eris)
+  - [Standard Lib](#Standard-Lib-Eris)
+  - [Eris-fleet](#Eris-fleet)
+  - [Redis-sharder](#Redis-sharder)
+  - [Eris-sharder](#Eris-sharder)
+  - [Megane](#Megane)
+- [WeatherStack](#WeatherStack)
+- [Twilight](#Twilight)
+- [Serenity](#Serenity)
+- [Spectacles](#Spectacles)
 
 # All clients
 
@@ -45,7 +45,7 @@ In general, reducing needless caching is a good thing. It will decrease the memo
 
 > **⚠ Notice ⚠:** For any production app, you must in all circumstances utilize both the `messageCacheLifetime` and `messageSweepInterval` options. Without chnaging these settings a memory leak is guaranteed to occour! Change these settings from default immediately!
 
-## Standard Lib
+## Standard Lib Discord.js
 
 The standard [Discord.js](https://discord.js.org/) lib is fairly performant out of the box, though not production-ready. (See notice below for info on production readiness.) Though there are some ways to increase your bot's performance with no trade-offs.
 
@@ -80,7 +80,7 @@ A huge plus for Kurasuta is the ability to specify a custom Discord.js client, s
 
 # Eris
 
-## Standard Lib
+## Standard Lib Eris
 
 [Eris](https://abal.moe/Eris/).
 
