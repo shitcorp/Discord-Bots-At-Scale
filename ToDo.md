@@ -25,3 +25,4 @@ Todo:
 
 - Need stats to back performance improvements.
 - make it all second person
+- add pictures
