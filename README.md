@@ -4,6 +4,27 @@ Writing a discord bot designed to scale is a difficult task. A wide variety of l
 
 <!-- place table of contents here -->
 
+# Table of Contents
+
+- [All Clients]()
+  - [Intents]()
+  - [Sharding]()
+  - [Reducing Caching]()
+- [Discord.js]()
+  - [Standard Lib]()
+  - [Using Discord.js-light]()
+  - [Kurasuta]()
+- [Eris]()
+  - [Standard Lib]()
+  - [Eris-fleet]()
+  - [Redis-sharder]()
+  - [Eris-sharder]()
+  - [Megane]()
+- [WeatherStack]()
+- [Twilight]()
+- [Serenity]()
+- [Spectacles]()
+
 # All clients
 
 The following subsections are a series of improvements that you should be complete with some respect for every client. What it looks like in terms of performance can vary drastically and depends entirely on the client. When comparing performance between all the differnt libraries and stacks, the language of each should be kept in mind. For example, comparing a pure Node.js client to a fullstack rust bot isn't fair. As such comparisons of performance gains in such scenarios should be taken with a grain of salt.
@@ -97,3 +118,5 @@ Due to it be sprawling not well documented, a list of its components can be foun
 [Serenity](https://crates.io/crates/serenity)
 
 # Spectacles
+
+[Spectacles](https://spec.pleb.xyz/#/)
