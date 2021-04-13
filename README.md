@@ -2,8 +2,6 @@
 
 Writing a discord bot designed to scale is a difficult task. A wide variety of libraries and stacks attempted to remedy this. This paper's goal is to discuss the pro and cons of each approach. While providing tips to improve performance while using them. The hope is to help guide you through this treacherous venture.
 
-<!-- place table of contents here -->
-
 # Table of Contents
 
 - [All Clients]()
