@@ -8,7 +8,8 @@ Todo:
     - Eris-sharder
     - Megane
   - WeatherStack
-  - Look into ‘detritus-client’ on npm
+  - Look into 'detritus-client'
+  - Look into 'paracord'
 
 - Rust
 
