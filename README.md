@@ -1,6 +1,7 @@
 # Discord bots at scale
 
-Writing a discord bot designed to scale is a difficult task. A wide variety of libraries and stacks attempted to remedy this. This paper's goal is to discuss the pro and cons of each approach. While providing tips to improve performance while using them. The hope is to help guide you through this treacherous venture.
+Writing a discord bot designed to scale is a difficult charge. A wide variety of solutions have been created to help remedy this issue. This gives you the developer the ability to choose a preferred solution for your workload. But, that last statement was a falsehood because it's just an illusion.
+To most readers, you are likely locked into a specific framework, and can't move. Hence, you need to increase performance without going insane. This paper's goal is to help increase performance no matter the framework. Whether that be slight setting changes, or adding entire libraries, there is performance to gain.
 
 # Table of Contents
 
