@@ -82,7 +82,7 @@ A huge plus for Kurasuta is the ability to specify a custom Discord.js client, s
 
 ## Standard Lib Eris
 
-[Eris](https://abal.moe/Eris/).
+The methods of making the standard [Eris](https://abal.moe/Eris/) library more performant has already been discussed for the most part in different contexts. As such, and with all of these libraries, please refer to the [all clients](#All-clients) section for these improvements. A tidbit on this topic is that Eris does not explicitly allow for the reduction of caching. As of right now, you are required to manually set the cache collection size to `0` or whatever max value you want. (There is a [feature request](https://github.com/abalabahaha/eris/issues/1174) to change this.)
 
 ## Eris-fleet
 
