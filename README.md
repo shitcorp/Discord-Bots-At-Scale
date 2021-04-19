@@ -1,4 +1,4 @@
-> Note, this paper is a work in progress. You can see its [progress here](https://github.com/shitcorp/Discord-Bots-At-Scale/projects/1).
+> Note, this paper is a work in progress. You can see its progress in the [projects tab](https://github.com/shitcorp/Discord-Bots-At-Scale/projects/1).
 # Discord bots at scale
 
 Writing a discord bot designed to scale is a difficult charge. A wide variety of solutions have been created to help remedy this issue. This gives you the developer the ability to choose a preferred solution for your workload. But, that last statement was a falsehood because it's just an illusion.
