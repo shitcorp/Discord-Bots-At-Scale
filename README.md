@@ -105,7 +105,7 @@ Now, at this point, something called `services` has been brought up a good bit, 
 
 ## Megane
 
-[c](https://github.com/brussell98/megane) is in the same situation as Eris-sharder. Not sure why you might want to use it besides it being an alterative to Eris-fleet.
+[Megane](https://github.com/brussell98/megane) is in the same situation as Eris-sharder. Not sure why you might want to use it besides it being an alterative to Eris-fleet.
 
 # WeatherStack
 
