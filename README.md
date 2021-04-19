@@ -87,7 +87,11 @@ The methods of making the standard [Eris](https://abal.moe/Eris/) library more p
 
 ## Eris-fleet
 
-[Eris-fleet](https://github.com/danclay/eris-fleet/).
+[Eris-fleet](https://github.com/danclay/eris-fleet/) is based on a very similar to that of [Kurasuta](#Kurasuta). Eris-fleet is similar in that it can distribute a load of shards across multiple CPU cores. Unlike [Eris-sharder](#Eris-sharder) and [Megane](#Megane), on which is it based off of, it feels more like production software. This is due to its support for custom Eris clients, and a wide variety of utils like those of its messaging system.
+
+Eris-fleet's messaging system has all the standard features that one would expect from ipc, and even more. For example, Eris-fleet has an entire set of ipc utils dedicated to managing both clusters and services. You can restart and shut down all clusters and services, as well as reshard all clusters. These out-of-the-box production tools keep your bot running while updating, or handling all the recent growth you've gotten.
+
+Now, at this point, something called `services` has been brought up a good bit, and you're probably wondering what they are. In effect, they are a distributed system of "workers" of which you can program to handle all sorts of tasks. They are very similar in concept to the worker in systems like rabbitmq. bullmq, redis, bistro, and kafka. Whether you have it handling cmds, fetching data, performing fluid simulations, or training a tensorflow ai, it can handle it. You just need to deal with the [constraints of ipc](http://www.ipcinfo.org/ipc-manual-interactive/overview/16-key-challenges-and-limitations/en/). If a distributed system is something you are interested in, try checking out a few of the microservice-based/capable systems like [Twilight](#Twilight), [WeatherStack](#WeatherStack), and [Spectacles](#Spectacles). Or, why bother with the gateway when you can just take in slash commands via http and use a load balancer like nginx or traefik.
 
 ## Redis-sharder
 
@@ -101,7 +105,7 @@ The methods of making the standard [Eris](https://abal.moe/Eris/) library more p
 
 ## Megane
 
-[Megane](https://github.com/brussell98/megane) is in the same situation as Eris-sharder. Not sure why you might want to use it besides it being an alterative to Eris-fleet.
+[c](https://github.com/brussell98/megane) is in the same situation as Eris-sharder. Not sure why you might want to use it besides it being an alterative to Eris-fleet.
 
 # WeatherStack
 
