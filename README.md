@@ -3,6 +3,8 @@
 Writing a discord bot designed to scale is a difficult charge. A wide variety of solutions have been created to help remedy this issue. This gives you the developer the ability to choose a preferred solution for your workload. But, that last statement was a falsehood because it's just an illusion.
 To most readers, you are likely locked into a specific framework, and can't move. Hence, you need to increase performance without going insane. This paper's goal is to help increase performance no matter the framework. Whether that be slight setting changes, or adding entire libraries, there is performance to gain.
 
+> Note, this paper is a work in progress. You can see its [progress here](https://github.com/shitcorp/Discord-Bots-At-Scale/projects/1).
+
 # Table of Contents
 
 - [All Clients](#All-clients)
