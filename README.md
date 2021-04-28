@@ -1,4 +1,5 @@
 > Note, this paper is a work in progress. You can see its progress in the [projects tab](https://github.com/shitcorp/Discord-Bots-At-Scale/projects/1).
+
 # Discord bots at scale
 
 Writing a discord bot designed to scale is a difficult charge. A wide variety of solutions have been created to help remedy this issue. This gives you the developer the ability to choose a preferred solution for your workload. But, that last statement was a falsehood because it's just an illusion.
@@ -55,7 +56,7 @@ The standard [Discord.js](https://discord.js.org/) lib is fairly performant out 
 
 To start, lets talking about message caching. In the [client options](https://discordjs.guide/popular-topics/intents.html#privileged-intents) there are quite a few helpful choices in reducing this.
 
-To start, let’s talk about the `messageEditHistoryMaxSize` option. By default, it is set to `-1`, or in other terms, unlimited. What this means is that Discord.js saves every version of a message, and only clears them when the cache sweep clears them. So obviously, unless you use previous versions of messages, this is pretty pointless. 
+To start, let’s talk about the `messageEditHistoryMaxSize` option. By default, it is set to `-1`, or in other terms, unlimited. What this means is that Discord.js saves every version of a message, and only clears them when the cache sweep clears them. So obviously, unless you use previous versions of messages, this is pretty pointless.
 In this case, I would personally recommend setting it to `0` so that Discord.js doesn’t ever save previous versions. If you do utilize edited messages, setting it to `1`, or `2` should be plenty.
 
 Next up is `messageCacheMaxSize`. It’s pretty simple, it’s just the number of messages to cache per channel. In general, I recommend `25` compared to the default `200` to decrease the memory footprint. <<<need to look into whether bulk delete method is affected by the message cache>>>
@@ -79,7 +80,7 @@ While reducing caching is nice, Discord.js-light does have some drawbacks like a
 
 [Kurasuta](https://github.com/DevYukine/Kurasuta) is probably the best way to get free performance from your Discord.js bot. Unlike Discord.js-light, which replaces the Discord.js library, Kurasuta is a replacement sharding manager. What makes it so powerful compared to Discord.js's built-in manager is its ability to cluster shards. Kurasuta can distribute the load of shards across CPU cores instead of relying upon one.
 
-The one trade-off when using Kurasuta is that the main bot file must be formatted in a specific way. For example, in the main bot file, the bot must utilize and expose a Class specified by Kurasuta. This shouldn't be a huge issue and might require some refactoring in existing bots, but it is largely worth it. Another downside is the refactored API. 
+The one trade-off when using Kurasuta is that the main bot file must be formatted in a specific way. For example, in the main bot file, the bot must utilize and expose a Class specified by Kurasuta. This shouldn't be a huge issue and might require some refactoring in existing bots, but it is largely worth it. Another downside is the refactored API.
 Due to how messages are passed between clusters, and consequently shards, the shard API had to be changed. Hence, you are at the mercy of the customized shard API listed [here](https://github.com/DevYukine/Kurasuta#shardclientutil).
 
 A huge plus for Kurasuta is the ability to specify a custom Discord.js client, such as Discord.js-light. The types for this feature aren't great, and you might have to typecast if you are using TS, but as stated above in the [piece on](#Using-Discord.js-light) Discord.js-light, the gains are worth it.
@@ -96,7 +97,7 @@ The methods of making the standard [Eris](https://abal.moe/Eris/) library more p
 
 Eris-fleet's messaging system has all the standard features that one would expect from ipc, and even more. For example, Eris-fleet has an entire set of ipc utils dedicated to managing both clusters and services. You can restart and shut down all clusters and services, as well as reshard all clusters. These out-of-the-box production tools keep your bot running while updating, or handling all the recent growth you've gotten.
 
-Now, at this point, something called `services` has been brought up a good bit, and you're probably wondering what they are. In effect, they are a distributed system of "workers" of which you can program to handle all sorts of tasks. They are very similar in concept to the worker in systems like rabbitmq. bullmq, redis, bistro, and kafka. 
+Now, at this point, something called `services` has been brought up a good bit, and you're probably wondering what they are. In effect, they are a distributed system of "workers" of which you can program to handle all sorts of tasks. They are very similar in concept to the worker in systems like rabbitmq. bullmq, redis, bistro, and kafka.
 Whether you have it handling cmds, fetching data, performing fluid simulations, or training a tensorflow ai, it can handle it. You just need to deal with the [constraints of ipc](http://www.ipcinfo.org/ipc-manual-interactive/overview/16-key-challenges-and-limitations/en/). If a distributed system is something you are interested in, try checking out a few of the microservice-based/capable systems like [Twilight](#Twilight), [WeatherStack](#WeatherStack), and [Spectacles](#Spectacles). Or, why bother with the gateway when you can just take in slash commands via http and use a load balancer like nginx or traefik.
 
 ## Redis-sharder
@@ -134,10 +135,11 @@ Due to it be sprawling not well documented, a list of its components can be foun
 # Testing Methodology
 
 In an attempt at fairness, each library was setup using the following guidelines:
-* Print "Hello World" when the bot is ready to start
-* Reply to the message "ping" with "pong"
-* There must only be 1 shard
-* There must be only 1 guild
-* There must be only 2 users (the tester and the bot)
-* The bot must utilize the advice presented in this whitepaper
-* The bot must be evaluated by a well-respected performance benchmarking tool
+
+- Print "Hello World" when the bot is ready to start
+- Reply to the message "ping" with "pong"
+- There must only be 1 shard
+- There must be only 1 guild
+- There must be only 2 users (the tester and the bot)
+- The bot must utilize the advice presented in this whitepaper
+- The bot must be evaluated by a well-respected performance benchmarking tool
