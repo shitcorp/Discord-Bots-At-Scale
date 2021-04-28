@@ -111,7 +111,7 @@ Whether you have it handling cmds, fetching data, performing fluid simulations, 
 
 ## Megane
 
-[Megane](https://github.com/brussell98/megane) is in the same situation as Eris-sharder. Not sure why you might want to use it besides it being an alterative to Eris-fleet.
+[Megane](https://github.com/brussell98/megane) is in a weird place. It is in all effect the same thing as [Eris-fleet](#Eris-fleet). At the time of writing this, the only notable differance is it's "central data store," whatever that is. This isn't to bash Megane as a library, but it should be noted that all performance gains from Megane can also be gotten from Eris-fleet.
 
 # WeatherStack
 
