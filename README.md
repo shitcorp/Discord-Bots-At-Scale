@@ -130,3 +130,13 @@ Due to it be sprawling not well documented, a list of its components can be foun
 # Spectacles
 
 [Spectacles](https://spec.pleb.xyz/#/)
+
+# Testing Methodology
+
+In an attempt at fairness, each library was setup using the following guidelines:
+* Print "Hello World" when the bot is ready to start
+* Reply to the message "ping" with "pong"
+* There must only be 1 shard
+* There must be only 1 guild
+* There must be only 2 users (the tester and the bot)
+* The bot must utilize the advice presented in this whitepaper
