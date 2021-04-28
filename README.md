@@ -140,3 +140,4 @@ In an attempt at fairness, each library was setup using the following guidelines
 * There must be only 1 guild
 * There must be only 2 users (the tester and the bot)
 * The bot must utilize the advice presented in this whitepaper
+* The bot must be evaluated by a well-respected performance benchmarking tool
