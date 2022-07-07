@@ -1,29 +1,5 @@
-Todo:
-
-- JS
-
-  - Eris
-    - Eris-fleet
-    - Redis-sharder
-    - Eris-sharder
-    - Megane
-  - WeatherStack
-  - Look into 'detritus-client'
-  - Look into 'paracord'
-
-- Rust
-
-  - Twilight
-  - Serenity
-
-- MISC
-
-  - Spectacles
-
-- Maybe general notes on production??
-
-  - BLAPI
-
-- Need stats to back performance improvements.
-- make it all second person
-- add pictures
+Todo
+- [ ] Write an abstract for the paper
+- [ ] Need to write tests for any claims made
+- [ ] Need to make list of optimization options out there (like eris-fleet or discord.js-light)
+    - [ ] Could be a list within the repo or an awesome list
