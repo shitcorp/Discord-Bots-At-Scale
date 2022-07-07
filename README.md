@@ -1,4 +1,4 @@
-> This paper is in the process of being rewritten, see the [rewrite branch](https://github.com/shitcorp/Discord-Bots-At-Scale/tree/rewrite) for progress.
+> Note, this paper is a work in progress. You can see its progress in the [projects tab](https://github.com/shitcorp/Discord-Bots-At-Scale/projects/1).
 
 # Discord bots at scale
 
